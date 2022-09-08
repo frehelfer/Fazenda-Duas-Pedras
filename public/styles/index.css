@@ -1,0 +1,9 @@
+.background_image {
+	position: relative;
+	background-image: url('/public/images/dan-meyers-IQVFVH0ajag-unsplash.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 500px;
+}
