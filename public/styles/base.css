@@ -13,13 +13,28 @@
 	--gray-700: hsl(210, 9%, 31%);
 	--gray-800: hsl(210, 10%, 23%);
 	--gray-900: hsl(210, 11%, 15%);
-	--green: hsl(152, 69%, 31%);
-	--red: hsl(354, 70%, 54%);
+
+	--primary-100: #eae7df;
+	--primary-200: #c7c3a3;
+	--primary-300: #e2cc95;
+	--primary-500: #ba9d4c;
+	--primary-800: rgb(150, 124, 53);
+
+	--sucess: hsl(152, 69%, 31%);
+	--error-100: hsl(354, 70%, 80%);
+	--error-500: hsl(354, 70%, 54%);
+
 	--link-color: #1567af;
 	--link-hover-color: #0c408c;
+
+	--border-radius-small: 4px;
+	--border-radius-medium: 8px;
+	--border-radius-large: 25px;
+
+	--shadow-medium: 3px 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* ------------- Body ------------- */
+/* ------------- Global ------------- */
 
 html {
 	font-size: 62.5%;
@@ -41,43 +56,53 @@ body {
 	font-size: 1.6rem;
 	line-height: 1.47059;
 	letter-spacing: 0.022em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: var(--gray-800);
 	font-style: normal;
-	background: #f4f4f6;
+	background-color: #f4f4f3;
 }
 
 main {
 	flex-grow: 1;
+	max-width: 1080px;
+	margin: 105px auto 0 auto;
+	padding: 10px;
+
+
 }
 
 /* ------------- Normal Tags ------------- */
 
 a {
-	/* color: var(--link-color); */
+	color: var(--primary-500);
 	text-decoration: none;
 }
 
 a:hover {
-	/* color: var(--link-hover-color); */
-}
+	color: var(--primary-200);
+} 
 
-ul {
+ul,
+ol {
 	list-style-type: none;
 }
 
 /* ------------- Buttons ------------- */
 
 .button {
-	border: 0;
-	border-radius: 30px;
-	background: #b89a46;
-	color: white;
 	font-size: 2rem;
-	text-decoration: none;
 	padding: 9px 20px;
 	margin: 0.25rem;
+	border: 0;
+	font: inherit;
 	cursor: pointer;
+	color: var(--white);
+	border-radius: var(--border-radius-large);
+	background-color: var(--primary-500);
+}
+
+.button:hover {
+	background-color: var(--primary-800);
 }
 
 /* ------------- Navbar ------------- */
