@@ -21,7 +21,7 @@
 	--primary-800: rgb(150, 124, 53);
 
 	--sucess: hsl(152, 69%, 31%);
-	--error-100: hsl(354, 70%, 80%);
+	--error-100: hsl(353, 81%, 90%);
 	--error-500: hsl(354, 70%, 54%);
 
 	--link-color: #1567af;
@@ -105,37 +105,6 @@ ol {
 	background-color: var(--primary-800);
 }
 
-/* ------------- Navbar ------------- */
-
-header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 90px;
-	width: 100%;
-	background-color: transparent;
-}
-
-.navbar_container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: auto;
-	height: 90px;
-	max-width: 1080px;
-	padding: 0 15px;
-}
-
-.navbar_container a {
-	font-size: 20px;
-	color: var(--gray-900);
-	padding: 15px;
-}
-
-.navbar_wrapper {
-	display: flex;
-}
-
 /* ------------- Hero ------------- */
 
 .hero_wrapper {
@@ -167,4 +136,19 @@ footer nav {
 footer p {
 	font-size: 1.2rem;
 	color: var(--gray-700);
+}
+
+/* ------------- Others ------------- */
+
+.alert {
+	border-radius: var(--border-radius-medium);
+	background-color: var(--error-100);
+	color: var(--error-500);
+	padding: 10px;
+}
+
+.alert h2 {
+	font-size: 1.7rem;
+	margin: 5px;
+	text-transform: uppercase;
 }

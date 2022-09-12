@@ -7,38 +7,44 @@
 
   <main>
     <h1>Create New Account</h1>
+    <% if (inputData.errorMessage) { %> 
+      <section class="alert">
+        <h2>Invalid Input</h2>
+        <p><%= inputData.errorMessage %> </p>
+      </section>
+    <% } %> 
 
     <form action="/signup" method="POST">
       <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
 
       <div class="input-wrapper">
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" value="<%= inputData.email %>" required>
       </div>
       <div class="input-wrapper">
         <label for="confirm-email">Confirmar o E-mail</label>
-        <input type="email" id="confirm-email" name="confirm-email" required>
+        <input type="email" id="confirm-email" name="confirm-email" value="<%= inputData.confirmEmail %>" required>
       </div>
       <div class="input-wrapper">
         <label for="password">Senha</label>
-        <input type="password" id="password" name="password" minlength="6" required>
+        <input type="password" id="password" name="password" value="<%= inputData.password %>" minlength="6" required>
       </div>
       <hr>
       <div class="input-wrapper">
         <label for="fullname">Nome Completo</label>
-        <input type="text" id="fullname" name="fullname" required>
+        <input type="text" id="fullname" name="fullname" value="<%= inputData.fullname %>" required>
       </div>
       <div class="input-wrapper">
         <label for="street">Endereço</label>
-        <input type="text" id="street" name="street" required>
+        <input type="text" id="street" name="street" value="<%= inputData.street %>" required>
       </div>
       <div class="input-wrapper">
         <label for="postal">CEP</label>
-        <input type="number" id="postal" name="postal" minlength="8" maxlength="8" required>
+        <input type="number" id="postal" name="postal" value="<%= inputData.postal %>" minlength="8" maxlength="8" required>
       </div>
       <div class="input-wrapper">
         <label for="city">Cidade</label>
-        <input type="text" id="city" name="city" required>
+        <input type="text" id="city" name="city" value="<%= inputData.city %>" required>
       </div>
 
       <button class="button">Create Account</button>

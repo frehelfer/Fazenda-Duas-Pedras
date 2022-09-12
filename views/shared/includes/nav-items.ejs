@@ -1,0 +1,39 @@
+<div class="navbar_logo">
+  <a class="" href="/">Fazenda Duas Pedras</a>
+</div>
+
+<div class="navbar_wrapper">
+  <a href="/">Sobre</a>
+
+  <% if (!locals.isAdmin) { %>
+    <a href="/comprar">Comprar</a>
+  <% } %>
+
+  <a href="/receitas">Receitas</a>
+  <a href="/contato">Contato</a>
+
+  <% if (!locals.isAdmin) { %>
+    <a href="/carrinho">Carrinho</a>
+  <% } %>
+
+  <% if (locals.isAuth && !locals.isAdmin) { %>
+    <a href="/pedidos">Pedidos</a>
+  <% } %>
+
+  <% if (locals.isAdmin) { %>
+    <a href="/admin/products">Ad.Produtos</a>
+    <a href="/admin/compras">Ad.Compras</a>
+  <% } %>
+
+  <% if (!locals.isAuth) { %>
+    <a href="/login">Entrar</a>
+  <% } %>
+
+  <% if (locals.isAuth) { %>
+    <form action="/logout" method="POST">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+      <button class="button">Logout</button>
+    </form>
+  <% } %>
+  
+</div>
