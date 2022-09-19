@@ -1,154 +1,115 @@
-/* ------------- Library ------------- */
-
-:root {
-	--black: #000;
-	--white: #fff;
-	--gray-dark: hsl(210, 10%, 23%);
-	--gray-100: hsl(210, 17%, 98%);
-	--gray-200: hsl(210, 16%, 93%);
-	--gray-300: hsl(210, 14%, 89%);
-	--gray-400: hsl(210, 14%, 83%);
-	--gray-500: hsl(210, 11%, 71%);
-	--gray-600: hsl(210, 7%, 46%);
-	--gray-700: hsl(210, 9%, 31%);
-	--gray-800: hsl(210, 10%, 23%);
-	--gray-900: hsl(210, 11%, 15%);
-
-	--primary-100: #eae7df;
-	--primary-200: #c7c3a3;
-	--primary-300: #e2cc95;
-	--primary-500: #ba9d4c;
-	--primary-800: rgb(150, 124, 53);
-
-	--sucess: hsl(152, 69%, 31%);
-	--error-100: hsl(353, 81%, 90%);
-	--error-500: hsl(354, 70%, 54%);
-
-	--link-color: #1567af;
-	--link-hover-color: #0c408c;
-
-	--border-radius-small: 4px;
-	--border-radius-medium: 8px;
-	--border-radius-large: 25px;
-
-	--shadow-medium: 3px 3px 10px rgba(0, 0, 0, 0.15);
+* {
+  box-sizing: border-box;
 }
-
-/* ------------- Global ------------- */
 
 html {
-	font-size: 62.5%;
-	box-sizing: border-box;
-}
+  font-family: "Montserrat", "sans-serif";
 
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-	margin: 0;
-	padding: 0;
+  --color-gray-50: rgb(243, 236, 230);
+  --color-gray-100: rgb(207, 201, 195);
+  --color-gray-300: rgb(99, 92, 86);
+  --color-gray-400: rgb(70, 65, 60);
+  --color-gray-500: rgb(37, 34, 31);
+  --color-gray-600: rgb(32, 29, 26);
+  --color-gray-700: rgb(31, 26, 22);
+
+  --color-primary-50: rgb(253, 224, 200);
+  --color-primary-100: rgb(253, 214, 183);
+  --color-primary-200: rgb(250, 191, 143);
+  --color-primary-400: rgb(223, 159, 41);
+  --color-primary-500: rgb(212, 136, 14);
+  --color-primary-700: rgb(212, 120, 14);
+  --color-primary-200-contrast: rgb(100, 46, 2);
+  --color-primary-500-contrast: white;
+
+  --color-error-100: rgb(255, 192, 180);
+  --color-error-500: rgb(199, 51, 15);
+
+  --color-primary-500-bg: rgb(63, 60, 58);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --border-radius-small: 4px;
+  --border-radius-medium: 6px;
+
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	font-size: 1.6rem;
-	line-height: 1.47059;
-	letter-spacing: 0.022em;
-	font-family: 'Montserrat', sans-serif;
-	color: var(--gray-800);
-	font-style: normal;
-	background-color: #f4f4f3;
+  background-color: var(--color-gray-500);
+  color: var(--color-gray-100);
+  margin: 0;
 }
 
 main {
-	flex-grow: 1;
-	max-width: 1080px;
-	margin: 105px auto 0 auto;
-	padding: 10px;
-
-
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
-/* ------------- Normal Tags ------------- */
+ul, 
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 a {
-	color: var(--primary-500);
-	text-decoration: none;
+  text-decoration: none;
+  color: var(--color-primary-400);
 }
 
-a:hover {
-	color: var(--primary-200);
-} 
-
-ul,
-ol {
-	list-style-type: none;
+.btn {
+  cursor: pointer;
+  font: inherit;
+  padding: var(--space-2) var(--space-6);
+  background-color: var(--color-primary-500);
+  color: var(--color-primary-500-contrast);
+  border: 1px solid var(--color-primary-500);
+  border-radius: var(--border-radius-small);
 }
 
-/* ------------- Buttons ------------- */
-
-.button {
-	font-size: 2rem;
-	padding: 9px 20px;
-	margin: 0.25rem;
-	border: 0;
-	font: inherit;
-	cursor: pointer;
-	color: var(--white);
-	border-radius: var(--border-radius-large);
-	background-color: var(--primary-500);
+.btn:hover,
+.btn:active {
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
 }
 
-.button:hover {
-	background-color: var(--primary-800);
+.btn-alt {
+  background-color: transparent;
+  color: var(--color-primary-500);
 }
 
-/* ------------- Hero ------------- */
-
-.hero_wrapper {
-	text-align: center;
-	max-width: 500px;
-	margin: 0 auto;
-	position: relative;
-	top: 200px;
+.btn-alt:hover,
+.btn-alt:active {
+  background-color: var(--color-primary-500-bg);
 }
-
-.hero_wrapper p {
-	margin: 10px 0 35px 0;
-}
-
-/* ------------- Footer ------------- */
-
-footer {
-	width: 100%;
-	padding: 25px 0 20px 0;
-	text-align: center;
-	background-color: var(--gray-400);
-}
-
-footer nav {
-	margin: 10px 0;
-	font-size: 1.3rem;
-}
-
-footer p {
-	font-size: 1.2rem;
-	color: var(--gray-700);
-}
-
-/* ------------- Others ------------- */
 
 .alert {
-	border-radius: var(--border-radius-medium);
-	background-color: var(--error-100);
-	color: var(--error-500);
-	padding: 10px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-error-100);
+  color: var(--color-error-500);
+  padding: var(--space-4);
 }
 
 .alert h2 {
-	font-size: 1.7rem;
-	margin: 5px;
-	text-transform: uppercase;
+  font-size: 1rem;
+  margin: var(--space-2) 0;
+  text-transform: uppercase;
+}
+
+.alert p {
+  margin: var(--space-2) 0;
+}
+
+.badge {
+  margin-left: var(--space-2);
+  padding: 0.15rem var(--space-4);
+  border-radius: 10rem;
+  background-color: var(--color-primary-500);
+  color: var(--color-primary-500-contrast);
 }

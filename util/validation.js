@@ -4,11 +4,7 @@ function isEmpty(value) {
 
 function userCredentialsAreValid(email, password) {
   return (
-    email &&
-    email.includes('@') &&
-    password &&
-    password.trim().lenght >= 8
-    // TODO password with 1 letter and 1 number
+    email && email.includes('@') && password && password.trim().length >= 6
   );
 }
 
@@ -29,4 +25,4 @@ function emailIsConfirmed(email, confirmEmail) {
 module.exports = {
   userDetailsAreValid: userDetailsAreValid,
   emailIsConfirmed: emailIsConfirmed,
-}
+};
