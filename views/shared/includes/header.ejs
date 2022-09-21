@@ -1,18 +1,16 @@
-<header>
-  <nav class="navbar_container">
-   <%- include('nav-items') %> 
-
-  <button class="mobile-menu-btn">
+<header id="main-header">
+  <div id="logo"><a href="/">WDE</a></div>
+  <nav>
+    <%- include('nav-items') %>
+  </nav>
+  <button id="mobile-menu-btn">
     <span></span>
     <span></span>
     <span></span>
   </button>
-  </nav>
-
 </header>
-
-<aside class="mobile-menu">
+<aside id="mobile-menu">
   <nav>
-    <%- include('mobile-menu') %> 
+    <%- include('nav-items') %>
   </nav>
 </aside>
